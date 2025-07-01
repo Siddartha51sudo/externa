@@ -1,3 +1,4 @@
+document.addEventListener("paste", function(e) {e.stopPropagation(); }, true);
 //18.Vishnu, a math enthusiast
 #include<stdio.h>
 

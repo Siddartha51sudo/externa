@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HostelFinder India</title>
+    <meta name="description" content="Find hostels across India. Search by city or use your location to see nearby hostels with ratings and fee structures." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">🏨</div>
+          <div class="brand-text">
+            <div class="brand-title">HostelFinder</div>
+            <div class="brand-sub">India</div>
+          </div>
+        </div>
+        <nav class="header-actions">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#how">How it works</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Find clean, affordable hostels across India</h1>
+            <p>Search by city or use your current location to discover nearby hostels. Compare ratings and fee structures instantly.</p>
+          </div>
+          <form id="searchForm" class="search-panel" autocomplete="off">
+            <div class="input-group">
+              <label for="locationInput">Location</label>
+              <div class="input-with-actions">
+                <input id="locationInput" name="location" type="text" placeholder="Search by city, area, or state (e.g. Bengaluru, Goa)" />
+                <button id="useLocationBtn" type="button" class="btn btn-secondary" title="Use my location">Use my location</button>
+              </div>
+            </div>
+
+            <div class="filters">
+              <div class="input-group">
+                <label for="ratingSelect">Min rating</label>
+                <select id="ratingSelect" name="rating">
+                  <option value="0">Any</option>
+                  <option value="3">3.0+</option>
+                  <option value="3.5">3.5+</option>
+                  <option value="4">4.0+</option>
+                  <option value="4.5">4.5+</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="budgetSelect">Budget</label>
+                <select id="budgetSelect" name="budget">
+                  <option value="any">Any</option>
+                  <option value="lt1000">Under ₹1000/night</option>
+                  <option value="1000-2000">₹1000–₹2000/night</option>
+                  <option value=">2000">Over ₹2000/night</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="sortSelect">Sort by</label>
+                <select id="sortSelect" name="sort">
+                  <option value="distance">Distance</option>
+                  <option value="rating">Rating</option>
+                  <option value="price">Price (lowest first)</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label>&nbsp;</label>
+                <button class="btn btn-primary" type="submit">Search</button>
+              </div>
+            </div>
+
+            <div class="hint">Tip: Try cities like Bengaluru, Mumbai, Delhi, Goa, Jaipur or use your GPS for nearby hostels.</div>
+          </form>
+        </div>
+      </section>
+
+      <section class="results container">
+        <div class="results-header">
+          <div>
+            <h2 class="results-title">Results</h2>
+            <div id="summaryText" class="results-summary">Showing all hostels</div>
+          </div>
+          <div id="resultCount" class="badge">0</div>
+        </div>
+
+        <div id="resultsGrid" class="grid"></div>
+
+        <div id="noResults" class="empty-state" hidden>
+          <div class="empty-emoji">🔎</div>
+          <h3>No hostels found</h3>
+          <p>Try a broader search term or different filters. You can also use your current location.</p>
+        </div>
+      </section>
+
+      <section id="about" class="info container">
+        <h3>About</h3>
+        <p>HostelFinder helps travelers, students, and backpackers discover hostels across India. This demo runs 100% in your browser without external APIs.</p>
+      </section>
+
+      <section id="how" class="info container">
+        <h3>How it works</h3>
+        <ul class="bullets">
+          <li>Type a city name or tap “Use my location” to see nearby hostels.</li>
+          <li>Filter by rating and budget. Sort by distance, rating, or price.</li>
+          <li>Each card shows rating, distance, and fee structure. Open in Maps to navigate.</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="info container">
+        <h3>Contact</h3>
+        <p>Feedback or suggestions? Email <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> HostelFinder India</div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#how">How it works</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
